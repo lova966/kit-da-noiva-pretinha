@@ -164,7 +164,7 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Ex: Beatriz Albuquerque"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#c5a059]/50 focus:border-[#c5a059] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#c5a059]/50 focus:border-[#c5a059] transition-all"
               />
             </div>
 
@@ -179,7 +179,7 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
                 value={phone}
                 onChange={handlePhoneChange}
                 placeholder="(83) 99999-9999"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#c5a059]/50 focus:border-[#c5a059] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#c5a059]/50 focus:border-[#c5a059] transition-all"
               />
             </div>
 
@@ -191,7 +191,7 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
               <select
                 value={weddingDatePeriod}
                 onChange={(e) => setWeddingDatePeriod(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#c5a059]/50 focus:border-[#c5a059] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-800 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#c5a059]/50 focus:border-[#c5a059] transition-all"
               >
                 <option value="3m">💍 Próximos 3 meses (Reta Final!)</option>
                 <option value="6m">✨ De 3 a 6 meses</option>
@@ -207,19 +207,19 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
               <label className="block text-xs font-semibold text-slate-700 mb-1">
                 Você já escolheu seu Vestido de Noiva?
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                 {[
-                  { id: 'escolhido', label: 'Sim, já escolhi' },
-                  { id: 'pesquisando', label: 'Estou pesquisando' },
-                  { id: 'nao_comecei', label: 'Ainda não comecei' },
+                  { id: 'escolhido', label: 'Já escolhi' },
+                  { id: 'pesquisando', label: 'Pesquisando' },
+                  { id: 'nao_comecei', label: 'Não comecei' },
                 ].map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => setDressStatus(item.id)}
-                    className={`py-2 px-2 rounded-xl text-xs font-medium border text-center transition-all ${
+                    className={`py-2.5 px-1 sm:px-2 rounded-xl text-[11px] sm:text-xs font-medium border text-center transition-all cursor-pointer ${
                       dressStatus === item.id
-                        ? 'border-[#c5a059] bg-[#c5a059]/10 text-[#8c6732] font-semibold'
+                        ? 'border-[#c5a059] bg-[#c5a059]/15 text-[#8c6732] font-bold shadow-sm'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
@@ -234,19 +234,19 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
               <label className="block text-xs font-semibold text-slate-700 mb-1">
                 Qual material você deseja receber?
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                 {[
-                  { id: 'ambos', label: '🎁 Kit Completo (Recomendado)' },
-                  { id: 'planner', label: '💍 Somente Planner' },
-                  { id: 'paletas', label: '🌿 Somente Paletas' },
+                  { id: 'ambos', label: '🎁 Kit Completo' },
+                  { id: 'planner', label: '💍 Só Planner' },
+                  { id: 'paletas', label: '🌿 Só Paletas' },
                 ].map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => setMaterialChoice(item.id)}
-                    className={`py-2 px-2 rounded-xl text-[11px] leading-tight font-medium border text-center transition-all ${
+                    className={`py-2.5 px-1 sm:px-2 rounded-xl text-[11px] sm:text-xs leading-tight font-medium border text-center transition-all cursor-pointer ${
                       materialChoice === item.id
-                        ? 'border-[#c5a059] bg-[#c5a059]/10 text-[#8c6732] font-semibold'
+                        ? 'border-[#c5a059] bg-[#c5a059]/15 text-[#8c6732] font-bold shadow-sm'
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >

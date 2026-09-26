@@ -148,29 +148,29 @@ export const InteractiveHub: React.FC<InteractiveHubProps> = ({ lead, onReset })
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex flex-wrap gap-2 pt-6 mt-6 border-t border-[#c5a059]/20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-6 mt-6 border-t border-[#c5a059]/20">
             <button
               onClick={() => setActiveTab('planner')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'planner'
                   ? 'gold-gradient-bg text-slate-950 shadow-md shadow-[#c5a059]/20'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
               }`}
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4 shrink-0" />
               <span>💍 Planner 12 Meses & Checklist</span>
             </button>
 
             <button
               onClick={() => setActiveTab('paletas')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'paletas'
                   ? 'gold-gradient-bg text-slate-950 shadow-md shadow-[#c5a059]/20'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
               }`}
             >
-              <Palette className="w-4 h-4" />
-              <span>🌿 Guia com 15 Paletas de Cores</span>
+              <Palette className="w-4 h-4 shrink-0" />
+              <span>🌿 Guia com 15 Paletas</span>
             </button>
 
             <button
@@ -178,9 +178,9 @@ export const InteractiveHub: React.FC<InteractiveHubProps> = ({ lead, onReset })
                 setActiveTab('imprimir');
                 setTimeout(() => window.print(), 300);
               }}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all cursor-pointer ml-auto"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 transition-all cursor-pointer"
             >
-              <Printer className="w-4 h-4 text-[#8c6732]" />
+              <Printer className="w-4 h-4 text-[#8c6732] shrink-0" />
               <span>Imprimir / Salvar PDF</span>
             </button>
           </div>
@@ -378,14 +378,14 @@ export const InteractiveHub: React.FC<InteractiveHubProps> = ({ lead, onReset })
             </div>
 
             {/* Filter Buttons */}
-            <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-slate-200">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                <span>Filtrar por Local:</span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-slate-200">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs font-semibold text-slate-700">
+                <span className="w-full sm:w-auto mb-1 sm:mb-0">Filtrar por Local:</span>
                 {(['todos', 'campo', 'praia', 'salao'] as const).map((venue) => (
                   <button
                     key={venue}
                     onClick={() => setSelectedVenueFilter(venue)}
-                    className={`px-3 py-1 rounded-xl text-xs capitalize transition-all cursor-pointer ${
+                    className={`px-3 py-1.5 rounded-xl text-xs capitalize transition-all cursor-pointer ${
                       selectedVenueFilter === venue
                         ? 'gold-gradient-bg text-slate-950 font-bold shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'

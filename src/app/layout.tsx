@@ -1,5 +1,12 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#FAF8F5',
+};
 
 export const metadata: Metadata = {
   title: 'Kit Gratuito da Noiva 2026/2027 | Planner 12 Meses & Guia de Paletas — Ateliê Pretinha',
