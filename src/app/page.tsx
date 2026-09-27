@@ -180,6 +180,14 @@ export default function Home() {
         <p className="text-slate-500">
           CNPJ: 69.075.467/0001-05 • Todos os direitos reservados.
         </p>
+        <div className="pt-2">
+          <a
+            href="/leads"
+            className="text-[11px] text-slate-600 hover:text-amber-400 transition-colors inline-flex items-center gap-1"
+          >
+            <span>Área Administrativa • Ver Leads</span>
+          </a>
+        </div>
       </footer>
     </div>
   );

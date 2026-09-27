@@ -30,7 +30,7 @@ interface InteractiveHubProps {
   onReset: () => void;
 }
 
-const WHATSAPP_NUMBER = '5583998289254'; // WhatsApp oficial Ateliê Pretinha
+const WHATSAPP_NUMBER = '5583996146261'; // WhatsApp oficial Ateliê Pretinha ((83) 99614-6261)
 
 export const InteractiveHub: React.FC<InteractiveHubProps> = ({ lead, onReset }) => {
   const [activeTab, setActiveTab] = useState<'planner' | 'paletas' | 'imprimir'>('planner');
@@ -562,7 +562,7 @@ export const InteractiveHub: React.FC<InteractiveHubProps> = ({ lead, onReset })
               </div>
 
               <div className="text-center pt-4 border-t text-[11px] text-slate-500">
-                Ateliê Pretinha Costureira • WhatsApp: (83) 99828-9254 • Instagram: @ateliepretinhacostureira_
+                Ateliê Pretinha Costureira • WhatsApp: (83) 99614-6261 • Instagram: @ateliepretinhacostureira_
               </div>
             </div>
           </div>

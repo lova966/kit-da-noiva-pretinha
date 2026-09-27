@@ -1,6 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
+
+function getLeadsFilePath(): string {
+  if (process.env.VERCEL) {
+    return path.join(os.tmpdir(), 'leads.json');
+  }
+  try {
+    const dataDir = path.join(process.cwd(), 'data');
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+    return path.join(dataDir, 'leads.json');
+  } catch {
+    return path.join(os.tmpdir(), 'leads.json');
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,12 +30,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const dataDir = path.join(process.cwd(), 'data');
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-
-    const filePath = path.join(dataDir, 'leads.json');
+    const filePath = getLeadsFilePath();
     let leads = [];
 
     if (fs.existsSync(filePath)) {
@@ -43,7 +54,11 @@ export async function POST(request: NextRequest) {
     };
 
     leads.unshift(newLead);
-    fs.writeFileSync(filePath, JSON.stringify(leads, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(filePath, JSON.stringify(leads, null, 2), 'utf-8');
+    } catch (writeErr) {
+      console.warn('File write fallback:', writeErr);
+    }
 
     return NextResponse.json({ success: true, lead: newLead });
   } catch (error: any) {
@@ -54,7 +69,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'data', 'leads.json');
+    const filePath = getLeadsFilePath();
     if (fs.existsSync(filePath)) {
       const raw = fs.readFileSync(filePath, 'utf-8');
       const leads = JSON.parse(raw);
