@@ -58,7 +58,7 @@ async function generateCreative1() {
 
     <!-- Top Headline -->
     <g filter="url(#shadow)">
-      <text x="${width/2}" y="115" class="main-hook">VAI CASAR EM 2025 OU 2026?</text>
+      <text x="${width/2}" y="115" class="main-hook">VAI CASAR EM 2026 OU 2027?</text>
       <text x="${width/2}" y="152" class="sub-hook">Não feche nenhum contrato antes de ler este checklist!</text>
     </g>
 
