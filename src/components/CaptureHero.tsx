@@ -95,18 +95,18 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-light max-w-2xl mx-auto">
-            O checklist definitivo de <strong>12 meses até o altar</strong>, o <strong>Guia Visual com 15 Paletas de Cores</strong>, a <strong>Consultoria de Silhuetas & Tecidos</strong> e um <strong>Voucher de Cortesia Exclusivo</strong>.
+            O checklist definitivo de <strong>12 meses até o altar</strong>, o <strong>Guia Visual com 15 Paletas de Cores</strong>, a <strong>Consultoria de Silhuetas & Tecidos</strong> e o <strong>Kit SOS do Dia da Noiva</strong>.
           </p>
 
           <div className="pt-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-300 text-emerald-800 text-xs font-bold shadow-sm">
-              <Gift className="w-3.5 h-3.5 text-emerald-700" />
-              <span>Valor Real Estimado: R$ 497,00 • Disponível 100% Gratuito</span>
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-[#8c6732] text-xs font-semibold shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#c5a059]" />
+              <span>Material Oficial & Gratuito para Noivas de 2026 e 2027</span>
             </span>
           </div>
         </div>
 
-        {/* 4 Guides & Bonuses Highlight Card Preview */}
+        {/* 4 Guides & Deliverables Highlight Card Preview */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 my-8 max-w-5xl mx-auto">
           {/* Card 1: Planner */}
           <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
@@ -121,7 +121,7 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
                 </h3>
               </div>
               <p className="text-[11px] text-slate-500 leading-relaxed">
-                Cronograma mês a mês do que contratar e prazos para não estourar o orçamento.
+                Cronograma mês a mês do que contratar e prazos para viver o processo sem correria.
               </p>
             </div>
           </div>
@@ -157,25 +157,25 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
                 </h3>
               </div>
               <p className="text-[11px] text-slate-500 leading-relaxed">
-                Descubra qual corte e decote valorizam mais o seu corpo e veja o Kit SOS da Noiva.
+                Descubra qual corte e decote valorizam mais o seu corpo e o caimento de cada tecido.
               </p>
             </div>
           </div>
 
-          {/* Card 4: VIP Voucher */}
-          <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-amber-50 border-2 border-[#d4af37] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          {/* Card 4: Kit SOS */}
+          <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div className="space-y-2">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center shrink-0 text-amber-900">
-                <Gift className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200/60 flex items-center justify-center shrink-0 text-rose-600">
+                <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#b02a37]">Bônus Especial</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-800">Bônus Especial</span>
                 <h3 className="text-sm font-serif font-bold text-slate-900">
-                  Voucher VIP R$ 300
+                  Kit SOS do Grande Dia
                 </h3>
               </div>
-              <p className="text-[11px] text-slate-600 leading-relaxed font-medium">
-                Cortesia para usar no primeiro aluguel ou confecção sob medida no Atelier Pretinha!
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                Lista de 10 itens de emergência indispensáveis para ter na suíte do Dia da Noiva.
               </p>
             </div>
           </div>

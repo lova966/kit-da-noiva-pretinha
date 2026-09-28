@@ -86,21 +86,3 @@ export const NOIVA_SOS_KIT = [
   { item: 'Colírio lubrificante e remédio para dor de cabeça', reason: 'Evita olhos vermelhos e garante bem-estar na festa.' },
   { item: 'Chinelo ou rasteirinha estilosa confortável', reason: 'Para o final da pista de dança quando os pés pedirem descanso.' }
 ];
-
-export interface BudgetCategory {
-  name: string;
-  percent: number;
-  icon: string;
-  tip: string;
-}
-
-export const BUDGET_CATEGORIES: BudgetCategory[] = [
-  { name: 'Espaço da Recepção & Buffet', percent: 40, icon: '🍽️', tip: 'Maior custo do evento. Negocie cardápios sazonais e bebidas consignadas.' },
-  { name: 'Vestido da Noiva, Traje & Beleza', percent: 12, icon: '👰', tip: 'No Atelier Pretinha, o primeiro aluguel e confecção sob medida economizam até 50% em comparação com compras prontas de boutique.' },
-  { name: 'Decoração, Flores & Mobiliário', percent: 15, icon: '💐', tip: 'Aproveite elementos naturais do local para economizar em flores nobres.' },
-  { name: 'Fotografia & Filmagem Profissional', percent: 12, icon: '📸', tip: 'A única lembrança física que fica para sempre. Escolha fotógrafos com quem tenha química.' },
-  { name: 'Música, Banda / DJ & Iluminação', percent: 8, icon: '🎶', tip: 'A iluminação cênica transforma qualquer espaço simples em um salão de revista.' },
-  { name: 'Cerimonial & Assessoria do Dia', percent: 7, icon: '📋', tip: 'Fundamental para você não se preocupar com cronômetros e fornecedores no dia.' },
-  { name: 'Convites, Lembrancinhas & Detalhes', percent: 3, icon: '💌', tip: 'Site dos noivos e convites digitais reduzem bastante o custo de papelaria.' },
-  { name: 'Fundo de Reserva / Imprevistos', percent: 3, icon: '🛡️', tip: 'Margem segura para pequenos ajustes de última hora ou taxas de cartório.' }
-];
