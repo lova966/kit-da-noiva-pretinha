@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Sparkles, Calendar, BookOpen, Heart, Palette, CheckCircle2, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
+import { Sparkles, Calendar, BookOpen, Heart, Palette, CheckCircle2, ShieldCheck, ArrowRight, Loader2, Gift, Scissors, Calculator } from 'lucide-react';
 import { LeadFormData } from '@/types';
 
 interface CaptureHeroProps {
@@ -95,41 +95,87 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-light max-w-2xl mx-auto">
-            O checklist definitivo de <strong>12 meses até o altar</strong> para você não esquecer nenhum detalhe, 
-            mais o <strong>Guia Visual com 15 Paletas de Cores</strong> para madrinhas e padrinhos.
+            O checklist definitivo de <strong>12 meses até o altar</strong>, o <strong>Guia Visual com 15 Paletas de Cores</strong>, a <strong>Consultoria de Silhuetas & Tecidos</strong> e um <strong>Voucher de Cortesia Exclusivo</strong>.
           </p>
+
+          <div className="pt-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-300 text-emerald-800 text-xs font-bold shadow-sm">
+              <Gift className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Valor Real Estimado: R$ 497,00 • Disponível 100% Gratuito</span>
+            </span>
+          </div>
         </div>
 
-        {/* 2 Guides Highlight Card Preview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 max-w-3xl mx-auto">
+        {/* 4 Guides & Bonuses Highlight Card Preview */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 my-8 max-w-5xl mx-auto">
           {/* Card 1: Planner */}
-          <div className="p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200/60 flex items-center justify-center shrink-0 text-[#c5a059]">
-              <Calendar className="w-6 h-6" />
-            </div>
-            <div className="space-y-1">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#8c6732]">Guia 01</span>
-              <h3 className="text-base font-serif font-bold text-slate-900">
-                Planner da Noiva — 12 Meses até o Sim
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Cronograma mês a mês com tudo o que contratar, prazos e o checklist especial para a escolha do vestido de noiva.
+          <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center shrink-0 text-[#c5a059]">
+                <Calendar className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#8c6732]">Guia 01</span>
+                <h3 className="text-sm font-serif font-bold text-slate-900">
+                  Planner 12 Meses
+                </h3>
+              </div>
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                Cronograma mês a mês do que contratar e prazos para não estourar o orçamento.
               </p>
             </div>
           </div>
 
           {/* Card 2: Palettes */}
-          <div className="p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center shrink-0 text-emerald-600">
-              <Palette className="w-6 h-6" />
+          <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center shrink-0 text-emerald-600">
+                <Palette className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">Guia 02</span>
+                <h3 className="text-sm font-serif font-bold text-slate-900">
+                  15 Paletas de Cores
+                </h3>
+              </div>
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                Combinações para madrinhas e padrinhos por horário e local (praia, campo ou igreja).
+              </p>
             </div>
-            <div className="space-y-1">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">Guia 02</span>
-              <h3 className="text-base font-serif font-bold text-slate-900">
-                Guia com 15 Paletas para Madrinhas
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Combinações harmônicas com códigos de cores, recomendações por horário e local (praia, campo ou igreja).
+          </div>
+
+          {/* Card 3: Silhouettes */}
+          <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-[#c5a059]/20 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200/60 flex items-center justify-center shrink-0 text-purple-600">
+                <Scissors className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-purple-800">Guia 03</span>
+                <h3 className="text-sm font-serif font-bold text-slate-900">
+                  Silhuetas & Tecidos
+                </h3>
+              </div>
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                Descubra qual corte e decote valorizam mais o seu corpo e veja o Kit SOS da Noiva.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: VIP Voucher */}
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-amber-50 border-2 border-[#d4af37] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center shrink-0 text-amber-900">
+                <Gift className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#b02a37]">Bônus Especial</span>
+                <h3 className="text-sm font-serif font-bold text-slate-900">
+                  Voucher VIP R$ 300
+                </h3>
+              </div>
+              <p className="text-[11px] text-slate-600 leading-relaxed font-medium">
+                Cortesia para usar no primeiro aluguel ou confecção sob medida no Atelier Pretinha!
               </p>
             </div>
           </div>
@@ -138,11 +184,14 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
         {/* Lead Capture Form Card */}
         <div className="max-w-xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-[#c5a059]/30 silk-shadow relative">
           <div className="text-center space-y-1.5 mb-6">
-            <h2 className="text-xl font-serif font-bold text-slate-900">
-              Baixe Gratuitamente em Segundos ✨
+            <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-100 text-[#8c6732] text-[11px] font-bold">
+              <span>🎁 Liberado Gratuitamente para Noivas de 2026 e 2027</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900">
+              Acesse o Kit Completo em Segundos ✨
             </h2>
             <p className="text-xs text-slate-500">
-              Acesse o planner interativo online e baixe a versão em PDF para imprimir
+              Acesse o hub interativo online e baixe a versão em PDF para imprimir
             </p>
           </div>
 
