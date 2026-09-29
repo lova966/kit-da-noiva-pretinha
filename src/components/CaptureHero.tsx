@@ -65,9 +65,16 @@ export const CaptureHero: React.FC<CaptureHeroProps> = ({ onLeadCaptured }) => {
       console.warn('API lead save warning (fallback to local):', err);
     }
 
-    // Save lead in localStorage for immediate session persistence
+    // Save lead in localStorage for immediate session persistence & history
     try {
       localStorage.setItem('pretinha_kit_noiva_lead', JSON.stringify(payload));
+      const historyRaw = localStorage.getItem('pretinha_all_leads_history');
+      const history = historyRaw ? JSON.parse(historyRaw) : [];
+      const exists = history.some((h: any) => h.phone === payload.phone);
+      if (!exists) {
+        history.unshift(payload);
+        localStorage.setItem('pretinha_all_leads_history', JSON.stringify(history));
+      }
     } catch {}
 
     setIsSubmitting(false);
